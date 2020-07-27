@@ -16,33 +16,33 @@ public class EmpleadoService {
     @Autowired
     EmpleadoRepository empleadoRepo;
 
-    public void crearEmpleado(Empleado empleado){
+    public void crearEmpleado(Empleado empleado) {
 
         empleadoRepo.save(empleado);
 
     }
 
-    public List<Empleado> listarEmpleados(){
+    public List<Empleado> listarEmpleados() {
 
         return empleadoRepo.findAll();
 
     }
 
-    public Empleado mostrarEmpleadoPorId(Integer empleadoId){
+    public Empleado mostrarEmpleadoPorId(Integer empleadoId) {
 
         Optional<Empleado> optionalEmpleado = empleadoRepo.findById(empleadoId);
 
-        if (optionalEmpleado.isPresent()){
-            
+        if (optionalEmpleado.isPresent()) {
+
             return optionalEmpleado.get();
-            
-        } 
-        
+
+        }
+
         return null;
 
     }
 
-    public void actualizarSueldoEmpleado(Empleado empleadoOriginal, BigDecimal sueldo){
+    public void actualizarSueldoEmpleado(Empleado empleadoOriginal, BigDecimal sueldo) {
 
         empleadoOriginal.setSueldo(sueldo);
 
@@ -50,18 +50,17 @@ public class EmpleadoService {
 
     }
 
-    public void actualizarEstado(Empleado empleado,int estadoId){
+    public void actualizarEstado(Empleado empleado, int estadoId) {
 
         empleado.setEstadoId(estadoId);
 
         empleadoRepo.save(empleado);
     }
 
-    public void borrarEmpleado(Empleado empleado){
+    public void borrarEmpleado(Empleado empleado) {
 
         this.actualizarEstado(empleado, 0);
 
     }
 
-    
 }

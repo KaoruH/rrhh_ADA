@@ -28,12 +28,12 @@ public class CategoriaService {
         return categoriaRepo.findAll();
     }
 
-    public List<Empleado> traerEmpleadosPorCategoria(int categoriaId){
+    public List<Empleado> traerEmpleadosPorCategoria(int categoriaId) {
 
         Optional<Categoria> cOptional = categoriaRepo.findById(categoriaId);
         List<Empleado> listaVacia = new ArrayList<>();
-        
-        if(cOptional.isPresent()){
+
+        if (cOptional.isPresent()) {
 
             return (cOptional.get()).getEmpleados();
         }
@@ -41,18 +41,16 @@ public class CategoriaService {
 
     }
 
-    public Categoria buscarCategoriaPorId(int categoriaId){
-    
+    public Categoria buscarCategoriaPorId(int categoriaId) {
+
         Optional<Categoria> optionalCategoria = categoriaRepo.findById(categoriaId);
-       
-        if(optionalCategoria.isPresent()){
+
+        if (optionalCategoria.isPresent()) {
 
             return optionalCategoria.get();
         }
         return null;
-        
 
     }
 
-    
 }
