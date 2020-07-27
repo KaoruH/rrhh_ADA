@@ -28,7 +28,7 @@ public class CategoriaService {
         return categoriaRepo.findAll();
     }
 
-    public List<Empleado> traerEmpleadosPorCategoria(int categoriaId) {
+    public List<Empleado> traerEmpleadosPorCategoria(Integer categoriaId) {
 
         Optional<Categoria> cOptional = categoriaRepo.findById(categoriaId);
         List<Empleado> listaVacia = new ArrayList<>();
@@ -41,7 +41,7 @@ public class CategoriaService {
 
     }
 
-    public Categoria buscarCategoriaPorId(int categoriaId) {
+    public Categoria buscarCategoriaPorId(Integer categoriaId) {
 
         Optional<Categoria> optionalCategoria = categoriaRepo.findById(categoriaId);
 

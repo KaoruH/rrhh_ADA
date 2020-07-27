@@ -50,7 +50,7 @@ public class EmpleadoService {
 
     }
 
-    public void actualizarEstado(Empleado empleado, int estadoId) {
+    public void actualizarEstado(Empleado empleado, Integer estadoId) {
 
         empleado.setEstadoId(estadoId);
 

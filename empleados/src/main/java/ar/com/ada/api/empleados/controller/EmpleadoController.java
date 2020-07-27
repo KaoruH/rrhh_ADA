@@ -56,7 +56,7 @@ public class EmpleadoController {
     }
 
     @GetMapping("/empleados/{id}")
-    public ResponseEntity<?> buscarEmpleadoPorId(@PathVariable int id) {
+    public ResponseEntity<?> buscarEmpleadoPorId(@PathVariable Integer id) {
 
         Empleado empleado = empleadoService.mostrarEmpleadoPorId(id);
 
@@ -69,7 +69,7 @@ public class EmpleadoController {
     }
 
     @PutMapping("/empleados/{id}/sueldos")
-    public ResponseEntity<?> actualizarSueldoEmpleado(@PathVariable int id, @RequestBody SueldoInfoRequest infoNueva) {
+    public ResponseEntity<?> actualizarSueldoEmpleado(@PathVariable Integer id, @RequestBody SueldoInfoRequest infoNueva) {
 
         Empleado empleadoOriginal = empleadoService.mostrarEmpleadoPorId(id);
 
@@ -90,7 +90,7 @@ public class EmpleadoController {
     }
 
     @DeleteMapping("/empleados/{id}")
-    public ResponseEntity<?> borrarEmpleado(@PathVariable int id) {
+    public ResponseEntity<?> borrarEmpleado(@PathVariable Integer id) {
 
         Empleado empleado = empleadoService.mostrarEmpleadoPorId(id);
 
