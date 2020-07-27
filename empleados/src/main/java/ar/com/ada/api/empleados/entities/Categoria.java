@@ -29,7 +29,8 @@ public class Categoria {
     @Column(name = "sueldo_base")
     private BigDecimal sueldoBase;
 
-    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL) // El mappedBy indica que el owner de la relación está
+                                                                  // en el otro lado
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<Empleado> empleados;
 
@@ -65,6 +66,4 @@ public class Categoria {
         this.empleados = empleados;
     }
 
-    
-    
 }

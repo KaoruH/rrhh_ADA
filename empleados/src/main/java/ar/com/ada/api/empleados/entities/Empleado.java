@@ -35,7 +35,8 @@ public class Empleado {
     private LocalDate fechaBaja;
 
     @ManyToOne
-    @JoinColumn(name = "categoria_id", referencedColumnName = "categoria_id")
+    @JoinColumn(name = "categoria_id", referencedColumnName = "categoria_id") // el JoinColumn indica que esta clase es
+                                                                              // la owner de la relación. Las categorias son inutiles sin empleados.
     private Categoria categoria;
 
     @Column(name = "estado_id")
@@ -106,5 +107,4 @@ public class Empleado {
         this.estadoId = estadoId;
     }
 
-    
 }
