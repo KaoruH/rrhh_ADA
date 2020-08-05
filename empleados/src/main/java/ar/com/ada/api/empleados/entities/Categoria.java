@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
@@ -32,6 +34,7 @@ public class Categoria {
     @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL) // El mappedBy indica que el owner de la relación está
                                                                   // en el otro lado
     @LazyCollection(LazyCollectionOption.FALSE)
+    @JsonIgnore
     private List<Empleado> empleados;
 
     public Integer getCategoryID() {
